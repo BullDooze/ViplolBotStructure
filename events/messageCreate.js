@@ -18,7 +18,7 @@ module.exports = {
 
   if(command) {
     if(command.cooldown) {
-      if(cooldown.has(`${command.name}${message.author.id}`)) return message.reply({ content: `Cooldown şuan aktif lütfen \`${ms(cooldown.get(`${command.name}${message.author.id}`) - Date.now(), {long : true}).replace("minutes", `dakika`).replace("seconds", `saniye`).replace("second", `saniye`).replace("ms", `milisaniye`)}\` sonra tekrar deneyin.`}).then(msg => setTimeout(() => msg.delete(), cooldown.get(`${command.name}${message.author.id}`) - Date.now()))
+      if(cooldown.has(`${command.name}${message.author.id}`)) return message.reply({ content: `Kindly wait \`${ms(cooldown.get(`${command.name}${message.author.id}`) - Date.now(), {long : true}).replace("minutes").replace("seconds").replace("second").replace("ms")}\` before using the command again!`}).then(msg => setTimeout(() => msg.delete(), cooldown.get(`${command.name}${message.author.id}`) - Date.now()))
       command.run(client, message, args)
       cooldown.set(`${command.name}${message.author.id}`, Date.now() + command.cooldown)
       setTimeout(() => {
