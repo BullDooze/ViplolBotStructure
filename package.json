@@ -1,0 +1,14 @@
+{
+  "name": "viplol-bot",
+  "version": "1.0.0",
+  "description": "Script for Viplol Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "BullDoze",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
